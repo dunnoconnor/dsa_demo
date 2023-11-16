@@ -23,16 +23,29 @@
 // if the character is not in the counter, add it as a new key with value 1
 //if there are one or fewer characters with an odd count, it can be a palindrome
 
-```
-Count ={
-    r:2,
-    a:2,
-    c:2,
-    e:1
-}
-```
-
 function permutesToPalindrome(string){
+    //first, check for empty string
+    if(string.length==0){
+        return false;
+    }
+    const count = {};
+    //count the occurance of each character
+    for(let i=0; i<string.length;i++){
+        if(string[i] in count){
+            count[string[i]]++;
+        } else count[string[i]]=1;
+    }
+    //tally the characters with odd counts
+    let odd = 0;
+    for (let key in count){1
+        if (count[key] % 2 == 1){
+            odd++;
+        }
+    }
+    //if more than one character has an odd count, the string cannot permute to a palindrome
+    if(odd>1){
+        return false;
+    }
     return true;
 }
 
