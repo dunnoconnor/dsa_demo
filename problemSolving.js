@@ -48,5 +48,8 @@ function permutesToPalindrome(string){
     }
     return true;
 }
-
+// O(n) loop
+permutesToPalindrome("a")
+// O(n) loop
+permutesToPalindrome("abcdefghij")
 module.exports = permutesToPalindrome;
