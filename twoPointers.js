@@ -23,6 +23,26 @@ Input: prices = [7,6,4,3,1] Output: 0 Explanation: There is no way to make a pos
    L R
 */
 
-function maxProfit(prices){}
+function maxProfit(prices){
+    //accumulator variable to track profit
+    let profit = 0;
+    //track two pointers, today and tomorrow
+    let today = 0;
+    let tomorrow = 1;
+    //loop through prices, comparing today's price to tomorrow's
+    while(tomorrow<prices.length){
+         //if tomorrow's price > today's, add the difference to the profit
+         let tradeValue = prices[tomorrow]- prices[today];
+         if(tradeValue>0){
+            //if tomorrow's price > today's, add the difference to the profit
+            profit+=tradeValue;
+         }
+        //increment the days
+        today++;
+        tomorrow++;
+
+    }
+    return profit;
+}
 
 module.exports = maxProfit;

@@ -15,6 +15,7 @@ function getMostCommonFirstName(names){
     //loop through names once
     //seperate the first name
     //set each name to lowercase
+    //O(n)
     for(let i=0; i<names.length; i++){
         let firstName = names[i].split(' ')[0].toLowerCase();
             //if name is in frequency counter, increment the count
@@ -26,7 +27,9 @@ function getMostCommonFirstName(names){
             }
     }
     //convert object to array
+    //O(n)
     let frequencyArray = Object.keys(frequencyCounter).map(name =>[name,frequencyCounter[name]]);
+    //O(nlog(n))
     frequencyArray.sort((a,b)=> b[1]-a[1]);
     return frequencyArray[0][0];
 }

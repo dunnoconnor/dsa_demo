@@ -1,4 +1,4 @@
-const maxProfit = require('./twoPointer');
+const maxProfit = require('./twoPointers');
 
 describe('Return the maximum profit you can achieve in the given span of days', () => {
     test('Test case 1', () => {
