@@ -2,8 +2,6 @@
 let count =0;
 function fibonacci(n){
     //set the base case
-    count++
-    console.log(n, count)
     if(n<=1){
         return n;
     } else{
